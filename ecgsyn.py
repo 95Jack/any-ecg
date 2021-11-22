@@ -235,7 +235,6 @@ def detectpeaks(X, thetap, sfecg):
 
     return ind
 
-@jit
 def desrivecgsyn(y0, t, flag, rr, sfint, ti, ai, bi):
 # def desrivecgsyn(t, y0, flag, rr, sfint, ti, ai, bi):
     # function dxdt = derivsecgsyn(t, x, flag, rr, sfint, ti, ai, bi)

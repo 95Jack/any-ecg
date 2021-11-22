@@ -3,8 +3,6 @@ from signalz import ecgsyn
 import numpy as np
 import time
 
-
-
 def generate_ecg(values, text):
     signals = []
     for lead in range(1,2):
