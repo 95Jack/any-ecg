@@ -5,6 +5,8 @@ import scipy as sp
 from scipy import  pi as PI
 import scipy.integrate as integrate
 
+from numba import jit
+
 J = sp.sqrt(-1)
 
 '''
@@ -37,13 +39,13 @@ ecgsyn.m and its dependents are freely availble from Physionet -
 http://www.physionet.org/ - please report any bugs to the authors above.
 ====================================================================
 '''
-def ecgsyn(sfecg=256,
-           N=256,
+def ecgsyn(sfecg=100,
+           N=8,
            anoise=0,
            hrmean=60,
            hrstd=1,
            lfhfratio=0.6,
-           sfint=512,
+           sfint=100,
            ti=[-70, -15, 0, 15, 100],
            ai=[1.2, -5, 30, -7.5, 0.75], # PQRST
            bi=[0.25, 0.1, 0.1, 0.1, 0.4] # PQRST
@@ -233,7 +235,7 @@ def detectpeaks(X, thetap, sfecg):
 
     return ind
 
-
+@jit
 def desrivecgsyn(y0, t, flag, rr, sfint, ti, ai, bi):
 # def desrivecgsyn(t, y0, flag, rr, sfint, ti, ai, bi):
     # function dxdt = derivsecgsyn(t, x, flag, rr, sfint, ti, ai, bi)
