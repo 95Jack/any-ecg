@@ -1,0 +1,6 @@
+[submodule "ec_plot"]
+	path = ec_plot
+	url = https://github.com/seang097/ecg_plot.git
+[submodule "ecg_plot"]
+	path = ecg_plot
+	url = https://github.com/seang097/ecg_plot.git
