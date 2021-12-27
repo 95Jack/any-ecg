@@ -5,8 +5,6 @@ import scipy as sp
 from scipy import  pi as PI
 import scipy.integrate as integrate
 
-from numba import jit
-
 J = sp.sqrt(-1)
 
 '''
@@ -234,6 +232,7 @@ def detectpeaks(X, thetap, sfecg):
             ind[int(ii)] = i
 
     return ind
+
 
 def desrivecgsyn(y0, t, flag, rr, sfint, ti, ai, bi):
 # def desrivecgsyn(t, y0, flag, rr, sfint, ti, ai, bi):
